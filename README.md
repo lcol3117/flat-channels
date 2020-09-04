@@ -1,2 +1,2 @@
-# flat-channels
+# map-channels
 A concurrency model
