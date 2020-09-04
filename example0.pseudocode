@@ -5,4 +5,4 @@ identity = connect send_request with "example.com"    // IdentityToken
 
 // do other stuff concurrently with the web request
 
-result = (find identity in send_request)              // Maybe<String>
+result = find identity in send_request                // Maybe<String>
