@@ -1,9 +1,8 @@
-flatchannel send_request_safe(url):                        // FlatChannel<String, String>
-  [send_web_request(url)]                                  // List<Maybe<String>>
-    |> flatten                                             // List<String>
+mapchannel send_request(url):                         // MapChannel<String, Maybe<String>>
+  send_web_request(url)                               // Maybe<String>
 
-identity = connect send_request_safe with "example.com"    // IdentityToken
+identity = connect send_request with "example.com"    // IdentityToken
 
 // do other stuff concurrently with the web request
 
-result = find identity in send_request_safe                // String
+result = (find identity in send_request)              // Maybe<String>
