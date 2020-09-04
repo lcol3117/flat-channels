@@ -1,0 +1,5 @@
+flatchannel send_request_safe(url):
+  [send_web_request(url)]                   // List<Maybe<String>>
+    |> flatten                              // List<String>
+
+identity = connect send_request_safe with "example.com"
